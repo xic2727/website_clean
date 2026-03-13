@@ -1,0 +1,34 @@
+{
+  "sites": [
+    {
+      "enabled": true,
+      "rules": [
+        "//div[@class=\"art-banner\"]",
+        "//div[@class=\"new-right\"]",
+        "//div[@class=\"more-news\"]",
+        "//div[@class=\"right-bar\"]",
+        "//div[@class=\"sticky-wrapper\"]",
+        "//div[@class=\"footer \"]",
+        "//div[@class=\"detail-ai\"]",
+        "//div[@class=\"detail-navigation\"]"
+      ],
+      "url": "https://www.53ai.com/"
+    },
+    {
+      "enabled": true,
+      "rules": [
+        "//div[@class=\"sidebar-wrapper\"]",
+        "//td[@class=\"posters topic-list-data\"]"
+      ],
+      "url": "https://linux.do/"
+    },
+    {
+      "enabled": false,
+      "rules": [
+        "//*[@id=\"left-sidebar-container\"]",
+        "//*[@id=\"right-sidebar-container\"]"
+      ],
+      "url": "https://www.reddit.com/"
+    }
+  ]
+}
