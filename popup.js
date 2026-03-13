@@ -102,6 +102,30 @@ document.addEventListener('DOMContentLoaded', () => {
       header.appendChild(deleteBtn);
       siteDiv.appendChild(header);
 
+      // x.com full width toggle (only for x.com sites)
+      if (site.url.includes('x.com')) {
+        const fullWidthDiv = document.createElement('div');
+        fullWidthDiv.className = 'rule-item';
+        
+        const fullWidthToggle = document.createElement('input');
+        fullWidthToggle.type = 'checkbox';
+        fullWidthToggle.id = `full-width-${siteIndex}`;
+        fullWidthToggle.checked = site.expandFullWidth || false;
+        fullWidthToggle.addEventListener('change', () => {
+          sites[siteIndex].expandFullWidth = fullWidthToggle.checked;
+          chrome.storage.sync.set({ sites });
+        });
+
+        const fullWidthLabel = document.createElement('span');
+        fullWidthLabel.textContent = 'Full Width Mode (hide sidebars)';
+        fullWidthLabel.style.fontSize = '12px';
+        fullWidthLabel.style.color = '#666';
+
+        fullWidthDiv.appendChild(fullWidthToggle);
+        fullWidthDiv.appendChild(fullWidthLabel);
+        siteDiv.appendChild(fullWidthDiv);
+      }
+
       // XPath rules
       site.rules.forEach((rule, ruleIndex) => {
         const ruleDiv = document.createElement('div');
