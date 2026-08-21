@@ -117,13 +117,39 @@ document.addEventListener('DOMContentLoaded', () => {
         });
 
         const fullWidthLabel = document.createElement('span');
-        fullWidthLabel.textContent = 'Full Width Mode (hide sidebars)';
+        fullWidthLabel.textContent = 'Full Width Mode (hide sidebars, wider tweets)';
         fullWidthLabel.style.fontSize = '12px';
         fullWidthLabel.style.color = '#666';
 
         fullWidthDiv.appendChild(fullWidthToggle);
         fullWidthDiv.appendChild(fullWidthLabel);
         siteDiv.appendChild(fullWidthDiv);
+
+        // Tweet max width: any CSS value (e.g. 100%, 1500px, 90vw).
+        // Empty / unset means fill the full available width.
+        const widthDiv = document.createElement('div');
+        widthDiv.className = 'rule-item';
+
+        const widthLabel = document.createElement('span');
+        widthLabel.textContent = 'Tweet width:';
+        widthLabel.style.fontSize = '12px';
+        widthLabel.style.color = '#666';
+        widthLabel.style.whiteSpace = 'nowrap';
+
+        const widthInput = document.createElement('input');
+        widthInput.type = 'text';
+        widthInput.value = site.tweetMaxWidth || '';
+        widthInput.placeholder = '100% (default)';
+        widthInput.style.fontSize = '12px';
+        widthInput.addEventListener('change', () => {
+          const v = widthInput.value.trim();
+          sites[siteIndex].tweetMaxWidth = v || undefined;
+          chrome.storage.sync.set({ sites });
+        });
+
+        widthDiv.appendChild(widthLabel);
+        widthDiv.appendChild(widthInput);
+        siteDiv.appendChild(widthDiv);
       }
 
       // XPath rules
