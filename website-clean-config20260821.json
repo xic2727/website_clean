@@ -1,0 +1,75 @@
+{
+  "sites": [
+    {
+      "enabled": true,
+      "rules": [
+        "//div[@class=\"art-banner\"]",
+        "//div[@class=\"new-right\"]",
+        "//div[@class=\"more-news\"]",
+        "//div[@class=\"right-bar\"]",
+        "//div[@class=\"sticky-wrapper\"]",
+        "//div[@class=\"footer \"]",
+        "//div[@class=\"detail-ai\"]",
+        "//div[@class=\"detail-navigation\"]",
+        "//div[@class=\"detail-navigation\"]",
+        "//div[@class=\"header-meeting\"]",
+        "//div[@class=\"share-con\"]"
+      ],
+      "url": "https://www.53ai.com/"
+    },
+    {
+      "enabled": true,
+      "rules": [
+        "//div[@class=\"sidebar-wrapper\"]",
+        "//td[@class=\"posters topic-list-data\"]"
+      ],
+      "url": "https://linux.do/"
+    },
+    {
+      "enabled": false,
+      "rules": [
+        "//*[@id=\"left-sidebar-container\"]",
+        "//*[@id=\"right-sidebar-container\"]"
+      ],
+      "url": "https://www.reddit.com/"
+    },
+    {
+      "enabled": true,
+      "expandRules": [
+        {
+          "css": "max-width: 100% !important; width: 100% !important; padding-left: 20px !important; padding-right: 20px !important;",
+          "xpath": "//div[contains(@class, \"Topstory-mainColumnCard\")] "
+        }
+      ],
+      "rules": [
+        "//div[@class=\"css-1qyytj7\"]",
+        "//div[@class=\"css-lgijre\"]"
+      ],
+      "url": "https://www.zhihu.com/"
+    },
+    {
+      "enabled": true,
+      "rules": [
+        "//div[@id=\"right-sidebar-container\"]",
+        "//*[@id=\"left-sidebar\"]"
+      ],
+      "url": "https://www.reddit.com/"
+    },
+    {
+      "enabled": true,
+      "expandFullWidth": true,
+      "expandRules": [],
+      "rules": [
+        "//header[@role='banner']"
+      ],
+      "url": "https://x.com/"
+    },
+    {
+      "enabled": true,
+      "rules": [
+        "//a[contains(@href, 'xgetapp.com')]"
+      ],
+      "url": "https://x-sou.com/"
+    }
+  ]
+}
